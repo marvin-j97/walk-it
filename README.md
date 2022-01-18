@@ -24,10 +24,10 @@ import walk from "walk-it";
 
 for await (const x of walk(dir)) {
   // x contains:
-  // dir: the scanned folder's absolute path
-  // files: files as directory entires (Dirent)
+  // dir    : the scanned folder's absolute path
+  // files  : files as directory entires (Dirent)
   // folders: folders as directory entires (Dirent)
-  // level: the tree level (0 being the start directory)
+  // level  : the tree level (0 being the start directory)
   console.log(x);
 }
 ```
