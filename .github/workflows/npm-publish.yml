@@ -12,11 +12,11 @@ jobs:
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v1
         with:
-          node-version: "14.x"
+          node-version: "12.x"
           registry-url: "https://registry.npmjs.org"
       - run: yarn install
       - run: npx ts-node version ${{ github.event.release.tag_name }}
-      - run: yarn test
+      - run: yarn coverage
       - run: yarn build
       - run: yarn publish --access public
         env:
