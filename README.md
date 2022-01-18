@@ -74,6 +74,8 @@ for await (const x of walk(dir, { recursive: false })) {
 #### Blacklist folders
 
 ```typescript
+import walk from "walk-it";
+
 for await (const x of walk(".", {
   excludeFolder: (folder) => ["node_modules", ".git"].includes(folder),
 })) {
@@ -86,6 +88,8 @@ _excludeFolder_ should be preferred over filtering after walking because it will
 #### Count files
 
 ```typescript
+import walk from "walk-it";
+
 let count = 0;
 for await (const { files } of walk(".")) {
   count += files.length;
