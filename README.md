@@ -73,6 +73,8 @@ for await (const x of walk(".", {
 }
 ```
 
+_excludeFolder_ should be preferred over filtering after walking because it will stop the recursive descent, thus increasing performance.
+
 #### Count files
 
 ```typescript
