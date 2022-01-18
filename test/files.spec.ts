@@ -25,6 +25,7 @@ test("Count files with level = 1", async (t) => {
   let count = 0;
   for await (const { files } of walk(fixtureFolder, { maxLevel: 1 })) {
     count += files.length;
+    console.log(files);
   }
   t.is(count, 8);
 });
