@@ -1,8 +1,7 @@
 import fs, { Dirent } from "fs";
 import { resolve } from "path";
 
-const { promises } = fs;
-const { readdir } = promises;
+const readdir = fs.promises.readdir;
 
 interface IScanOptions {
   recursive?: boolean;

@@ -1,6 +1,6 @@
 # walk-it
 
-Recursive file **walk-it**erator. Requires Node
+Recursive file **walk-it**erator. Requires Node 10.11.0+.
 
 ## Install
 
