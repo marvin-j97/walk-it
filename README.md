@@ -1,6 +1,8 @@
 # walk-it
 
 [![Node.js CI](https://github.com/marvin-j97/walk-it/actions/workflows/node.js.yml/badge.svg)](https://github.com/marvin-j97/walk-it/actions/workflows/node.js.yml)
+![npm](https://img.shields.io/npm/v/walk-it)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/walk-it)
 [![codecov](https://codecov.io/gh/marvin-j97/walk-it/branch/main/graph/badge.svg?token=ExVQZnlhqk)](https://codecov.io/gh/marvin-j97/walk-it)
 
 Recursive file **walk-it**erator. Requires Node 12+.
