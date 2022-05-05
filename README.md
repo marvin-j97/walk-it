@@ -93,9 +93,14 @@ _excludeFolder_ should be preferred over filtering after walking because it will
 ```typescript
 import walk from "walk-it";
 
-let count = 0;
-for await (const { files } of walk(".")) {
-  count += files.length;
+async function countFiles(dir: string): Promise<number> {
+  let count = 0;
+  for await (const { files } of walk(".")) {
+    count += files.length;
+  }
+  return count;
 }
-console.log(`${count} files found`);
+
+countFiles(".")
+  .then(count => console.log(`${count} files found`));
 ```
