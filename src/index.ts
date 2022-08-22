@@ -76,3 +76,11 @@ export async function* walkFiles(dir: string, opts?: IScanOptions): AsyncIterabl
     }
   }
 }
+
+export async function countFiles(dir: string, opts?: IScanOptions): Promise<number> {
+  let count = 0;
+  for await (const { files } of walk(dir, opts)) {
+    count += files.length;
+  }
+  return count;
+}
