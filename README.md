@@ -3,7 +3,7 @@
 [![Node.js CI](https://github.com/marvin-j97/walk-it/actions/workflows/node.js.yml/badge.svg)](https://github.com/marvin-j97/walk-it/actions/workflows/node.js.yml)
 ![npm](https://img.shields.io/npm/v/walk-it)
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/walk-it)
-[![codecov](https://codecov.io/gh/marvin-j97/walk-it/branch/main/graph/badge.svg?token=ExVQZnlhqk)](https://codecov.io/gh/marvin-j97/walk-it)
+[![codecov](https://codecov.io/gh/marvin-j97/walk-it/branch/master/graph/badge.svg?token=ExVQZnlhqk)](https://codecov.io/gh/marvin-j97/walk-it)
 
 Recursive file **walk-it**erator. Requires Node 12+.
 
@@ -30,8 +30,8 @@ import walk from "walk-it";
 for await (const x of walk(dir)) {
   // x contains:
   // dir    : the scanned folder's absolute path
-  // files  : files as directory entires (Dirent)
-  // folders: folders as directory entires (Dirent)
+  // files  : files as directory entries (Dirent)
+  // folders: folders as directory entries (Dirent)
   // level  : the tree level (0 being the start directory)
   console.log(x);
 }
@@ -93,9 +93,14 @@ _excludeFolder_ should be preferred over filtering after walking because it will
 ```typescript
 import walk from "walk-it";
 
-let count = 0;
-for await (const { files } of walk(".")) {
-  count += files.length;
+async function countFiles(dir: string): Promise<number> {
+  let count = 0;
+  for await (const { files } of walk(".")) {
+    count += files.length;
+  }
+  return count;
 }
-console.log(`${count} files found`);
+
+countFiles(".")
+  .then(count => console.log(`${count} files found`));
 ```
