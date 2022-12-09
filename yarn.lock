@@ -414,10 +414,10 @@
     test-exclude "^6.0.0"
     vitest "0.22.1"
 
-"@vitest/ui@0.22.1":
-  version "0.22.1"
-  resolved "https://registry.yarnpkg.com/@vitest/ui/-/ui-0.22.1.tgz#549fe2d156bf91824c61cde74bd835c81c4a7996"
-  integrity sha512-iiM2JN+vzY8pEejUbPPi0EgkEselI3RvrgMPNUOalxQRgtlNVGyMsM0Re99xQsrZ/eBkHgWrlW216gNDoeD5cA==
+"@vitest/ui@0.25.6":
+  version "0.25.6"
+  resolved "https://registry.yarnpkg.com/@vitest/ui/-/ui-0.25.6.tgz#5380b85da712ef609e59b4521bf94512d5d259ad"
+  integrity sha512-Ws3cDPJ7Ya/jPUmoqYF2mZalvyCccV3P+qerqBfu6NsFqtZffyb7hkwkuLnXeB6NAJtR2I0+y85NrvaJMLjbEA==
   dependencies:
     sirv "^2.0.2"
 
