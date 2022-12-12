@@ -27,7 +27,7 @@ async function* emitFolder(
   const dirents = await readdir(dir, { withFileTypes: true });
 
   const files = dirents.filter((dirent) => {
-    if (!isDir(dirent)) {
+    if (isDir(dirent)) {
       return false;
     }
 
@@ -72,7 +72,7 @@ async function* emitFolder(
   }
 }
 
-export default async function* walk(
+export async function* walk(
   dir: string,
   opts?: IScanOptions,
 ): AsyncIterableIterator<IFolderResult> {
