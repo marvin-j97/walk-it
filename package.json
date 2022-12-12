@@ -54,7 +54,7 @@
     "vitest": "0.22.1",
     "@vitest/coverage-istanbul": "0.22.1",
     "@vitest/ui": "0.22.1",
-    "tsup": "6.2.2"
+    "tsup": "6.5.0"
   },
   "engines": {
     "node": ">=12"
