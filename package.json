@@ -19,9 +19,8 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production node dist",
     "lint": "eslint src --ext .ts",
-    "lint:fix": "eslint src --fix --ext .ts",
     "test": "vitest run",
-    "test:open": "vitest --ui",
+    "test:ui": "vitest --ui",
     "coverage": "vitest run --coverage",
     "build": "tsup src/index.ts --format cjs,esm --dts --clean"
   },
