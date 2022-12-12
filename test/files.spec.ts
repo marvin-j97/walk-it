@@ -1,5 +1,6 @@
+import { resolve } from "node:path";
+
 import { describe, expect, it } from "vitest";
-import { resolve } from "path";
 
 import walk, { countFiles, walkFiles } from "../src";
 

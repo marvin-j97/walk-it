@@ -1,7 +1,8 @@
-import { describe, expect, it } from "vitest";
-import { resolve } from "path";
+import { resolve } from "node:path";
 
-import walk, { walkFiles, countFiles } from "../src";
+import { describe, expect, it } from "vitest";
+
+import walk, { countFiles, walkFiles } from "../src";
 
 const fixtureFolder = resolve("test/fixture");
 

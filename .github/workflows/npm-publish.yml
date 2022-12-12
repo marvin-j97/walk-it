@@ -14,10 +14,10 @@ jobs:
         with:
           node-version: "14.x"
           registry-url: "https://registry.npmjs.org"
-      - run: yarn
-      - run: yarn lint
-      - run: yarn build
-      - run: yarn coverage
-      - run: yarn publish --access public
+      - run: pnpm install
+      - run: pnpm run lint
+      - run: pnpm run build
+      - run: pnpm run coverage
+      - run: pnpm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}

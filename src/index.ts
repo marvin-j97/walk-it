@@ -1,7 +1,6 @@
-import fs, { Dirent } from "fs";
-import { resolve } from "path";
-
-const readdir = fs.promises.readdir;
+import { Dirent } from "node:fs";
+import { readdir } from "node:fs/promises";
+import { resolve } from "node:path";
 
 interface IScanOptions {
   recursive?: boolean;

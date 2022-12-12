@@ -16,7 +16,7 @@
     }
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=production node build",
+    "start": "cross-env NODE_ENV=production node dist",
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --fix --ext .ts",
     "test": "vitest run",
@@ -41,22 +41,22 @@
   },
   "homepage": "https://github.com/marvin-j97/walk-it#readme",
   "devDependencies": {
-    "@types/node": "12",
-    "@typescript-eslint/eslint-plugin": "4.33.0",
-    "@typescript-eslint/parser": "4.33.0",
+    "@types/node": "14.18.0",
+    "@typescript-eslint/eslint-plugin": "5.46.1",
+    "@typescript-eslint/parser": "5.46.1",
     "cross-env": "7.0.3",
     "eslint": "7.32.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "4.2.1",
-    "eslint-plugin-simple-import-sort": "7.0.0",
+    "eslint-plugin-simple-import-sort": "8.0.0",
     "prettier": "2.8.1",
-    "typescript": "4.7.4",
-    "vitest": "0.22.1",
-    "@vitest/coverage-istanbul": "0.22.1",
-    "@vitest/ui": "0.22.1",
+    "typescript": "4.9.4",
+    "vitest": "0.25.7",
+    "@vitest/coverage-istanbul": "0.25.7",
+    "@vitest/ui": "0.25.7",
     "tsup": "6.5.0"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=14.18.0"
   }
 }

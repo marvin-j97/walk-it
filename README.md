@@ -5,13 +5,14 @@
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/walk-it)
 [![codecov](https://codecov.io/gh/marvin-j97/walk-it/branch/master/graph/badge.svg?token=ExVQZnlhqk)](https://codecov.io/gh/marvin-j97/walk-it)
 
-Recursive file **walk-it**erator. Requires Node 12+.
+Recursive file **walk-it**erator. Requires Node 14.18+.
 
 ## Install
 
 ```bash
 npm i walk-it
 yarn add walk-it
+pnpm i walk-it
 ```
 
 ## Default behaviour
