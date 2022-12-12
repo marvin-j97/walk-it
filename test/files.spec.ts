@@ -36,7 +36,7 @@ describe("count files", () => {
       let count = 0;
       for await (const { files } of walk(fixtureFolder, {
         // Exclude folders with digits in name
-        excludeFolder: (folder) => /\d/.test(folder),
+        excludeFolder: ({ name }) => /\d/.test(name),
       })) {
         count += files.length;
       }
@@ -73,7 +73,7 @@ describe("count files", () => {
       let count = 0;
       for await (const _ of walkFiles(fixtureFolder, {
         // Exclude folders with digits in name
-        excludeFolder: (folder) => /\d/.test(folder),
+        excludeFolder: ({ name }) => /\d/.test(name),
       })) {
         count++;
       }
@@ -100,7 +100,7 @@ describe("count files", () => {
     it("exclude folders", async () => {
       const count = await countFiles(fixtureFolder, {
         // Exclude folders with digits in name
-        excludeFolder: (folder) => /\d/.test(folder),
+        excludeFolder: ({ name }) => /\d/.test(name),
       });
       expect(count).to.equal(11);
     });
