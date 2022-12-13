@@ -1,8 +1,9 @@
 # walk-it
 
-[![Node.js CI](https://github.com/marvin-j97/walk-it/actions/workflows/node.js.yml/badge.svg)](https://github.com/marvin-j97/walk-it/actions/workflows/node.js.yml)
-[![Deno ready](https://img.shields.io/static/v1?label=&message=Deno+ready&color=%23000000&logo=deno)]()
+[![TS ready](https://img.shields.io/static/v1?label=&message=TS+ready&color=000000&logo=typescript)]()
 [![ESM ready](https://img.shields.io/static/v1?label=&message=ESM+ready&color=%23000000&logo=javascript)]()
+[![Deno ready](https://img.shields.io/static/v1?label=&message=Deno+ready&color=%23000000&logo=deno)]()
+[![Node.js CI](https://github.com/marvin-j97/walk-it/actions/workflows/node.js.yml/badge.svg)](https://github.com/marvin-j97/walk-it/actions/workflows/node.js.yml)
 [![npm](https://img.shields.io/npm/v/walk-it)](https://www.npmjs.com/package/walk-it)
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/walk-it)](https://bundlephobia.com/package/walk-it)
 [![codecov](https://codecov.io/gh/marvin-j97/walk-it/branch/master/graph/badge.svg?token=ExVQZnlhqk)](https://codecov.io/gh/marvin-j97/walk-it)
