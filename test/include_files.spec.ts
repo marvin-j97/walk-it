@@ -28,7 +28,7 @@ describe("include files", async () => {
   });
 
   it("should list all files", async () => {
-    for await (const path of walkFiles(folder)) {
+    for await (const { path } of walkFiles(folder)) {
       expect(files).to.include(path);
     }
   });

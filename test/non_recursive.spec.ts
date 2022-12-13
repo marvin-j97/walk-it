@@ -25,7 +25,7 @@ describe("non_recursive", () => {
   });
 
   it("should list all files", async () => {
-    for await (const path of walkFiles(folder)) {
+    for await (const {path} of walkFiles(folder)) {
       expect(files).to.include(path);
     }
   });
