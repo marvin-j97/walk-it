@@ -1,18 +1,26 @@
 # walk-it
 
 [![Node.js CI](https://github.com/marvin-j97/walk-it/actions/workflows/node.js.yml/badge.svg)](https://github.com/marvin-j97/walk-it/actions/workflows/node.js.yml)
-![npm](https://img.shields.io/npm/v/walk-it)
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/walk-it)
+[![Deno ready](https://img.shields.io/static/v1?label=&message=Deno+ready&color=%23000000&logo=deno)]()
+[![ESM ready](https://img.shields.io/static/v1?label=&message=ESM+ready&color=%23000000&logo=javascript)]()
+[![npm](https://img.shields.io/npm/v/walk-it)](https://www.npmjs.com/package/walk-it)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/walk-it)](https://bundlephobia.com/package/walk-it)
 [![codecov](https://codecov.io/gh/marvin-j97/walk-it/branch/master/graph/badge.svg?token=ExVQZnlhqk)](https://codecov.io/gh/marvin-j97/walk-it)
 
-Recursive file **walk-it**erator. Requires Node 14.18+.
+Recursive file **walk-it**erator. Requires Node 14.18+ or Deno.
 
-## Install
+## Install (Node)
 
 ```bash
 npm i walk-it
 yarn add walk-it
 pnpm i walk-it
+```
+
+## Deno usage
+
+```bash
+import { walk } from "npm:walk-it"
 ```
 
 ## Default behaviour
@@ -26,7 +34,7 @@ Note that subfolders are visited _eagerly_, meaning the _level_ is not sorted (a
 #### Walk all folders recursively
 
 ```typescript
-import walk from "walk-it";
+import { walk } from "walk-it";
 
 for await (const x of walk(dir)) {
   // x contains:
@@ -52,7 +60,7 @@ for await (const file of walkFiles(dir)) {
 #### Limit recursive descent
 
 ```typescript
-import walk from "walk-it";
+import { walk } from "walk-it";
 
 // 0 = Only output 'dir'
 // 1 = Descent once
@@ -68,7 +76,7 @@ for await (const x of walk(dir, { maxLevel: 2 })) {
 Same as maxLevel = 0
 
 ```typescript
-import walk from "walk-it";
+import { walk } from "walk-it";
 
 for await (const x of walk(dir, { recursive: false })) {
   console.log(x);
@@ -78,7 +86,7 @@ for await (const x of walk(dir, { recursive: false })) {
 #### Blacklist folders
 
 ```typescript
-import walk from "walk-it";
+import { walk } from "walk-it";
 
 for await (const x of walk(".", {
   excludeFolder: (folder) => ["node_modules", ".git"].includes(folder),
