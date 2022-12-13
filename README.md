@@ -20,7 +20,7 @@ pnpm i walk-it
 ## Deno usage
 
 ```typescript
-import { walk } from "npm:walk-it"
+import { walk } from "npm:walk-it";
 ```
 
 ## Default behaviour
@@ -51,9 +51,10 @@ for await (const x of walk(dir)) {
 ```typescript
 import { walkFiles } from "walk-it";
 
-for await (const file of walkFiles(dir)) {
-  // file is the absolute path of the visited file
-  console.log(file);
+for await (const { file, path } of walkFiles(dir)) {
+  // file is a Dirent object
+  // path is the absolute path of the visited file
+  console.log(file, path);
 }
 ```
 
@@ -114,5 +115,6 @@ _excludeFolder_ should be preferred over filtering after walking because it will
 ```typescript
 import { countFiles } from "walk-it";
 
-countFiles(".").then((count) => console.log(`${count} files found`));
+const count = await countFiles(".");
+console.log(`${count} files found`);
 ```

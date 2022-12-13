@@ -1,3 +1,4 @@
+import type { Dirent } from "node:fs";
 import { readdir } from "node:fs/promises";
 import { resolve } from "node:path";
 
@@ -82,10 +83,13 @@ export async function* walk(
 export async function* walkFiles(
   inputDir: string,
   opts?: IScanOptions,
-): AsyncIterableIterator<string> {
+): AsyncIterableIterator<{ path: string; file: Dirent }> {
   for await (const { dir, files } of walk(inputDir, opts)) {
-    for (const { name } of files) {
-      yield resolve(dir, name);
+    for (const file of files) {
+      yield {
+        path: resolve(dir, file.name),
+        file,
+      };
     }
   }
 }

@@ -1,4 +1,4 @@
-import { Dirent } from "node:fs";
+import type { Dirent } from "node:fs";
 
 export interface IScanOptions {
   recursive?: boolean;
