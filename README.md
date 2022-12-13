@@ -19,7 +19,7 @@ pnpm i walk-it
 
 ## Deno usage
 
-```bash
+```typescript
 import { walk } from "npm:walk-it"
 ```
 
@@ -83,13 +83,25 @@ for await (const x of walk(dir, { recursive: false })) {
 }
 ```
 
+#### Whitelist files by extension
+
+```typescript
+import { walk } from "walk-it";
+
+for await (const x of walk(".", {
+  includeFile: ({ name }) => name.endsWith(".jpg"),
+})) {
+  console.log(x);
+}
+```
+
 #### Blacklist folders
 
 ```typescript
 import { walk } from "walk-it";
 
 for await (const x of walk(".", {
-  excludeFolder: (folder) => ["node_modules", ".git"].includes(folder),
+  excludeFolder: ({ name }) => ["node_modules", ".git"].includes(name),
 })) {
   console.log(x);
 }
