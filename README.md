@@ -7,6 +7,7 @@
 [![npm](https://img.shields.io/npm/v/walk-it)](https://www.npmjs.com/package/walk-it)
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/walk-it)](https://bundlephobia.com/package/walk-it)
 [![codecov](https://codecov.io/gh/marvin-j97/walk-it/branch/master/graph/badge.svg?token=ExVQZnlhqk)](https://codecov.io/gh/marvin-j97/walk-it)
+![GitHub](https://img.shields.io/github/license/marvin-j97/walk-it)
 
 Recursive file **walk-it**erator. Requires Node 14.18+ or Deno.
 
