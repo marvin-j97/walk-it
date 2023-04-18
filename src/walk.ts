@@ -73,10 +73,7 @@ async function* emitFolder(
   }
 }
 
-export async function* walk(
-  dir: string,
-  opts?: ScanOptions,
-): AsyncIterableIterator<FolderResult> {
+export async function* walk(dir: string, opts?: ScanOptions): AsyncIterableIterator<FolderResult> {
   yield* emitFolder(dir, opts);
 }
 
