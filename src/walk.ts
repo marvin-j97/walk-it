@@ -2,10 +2,10 @@ import type { Dirent } from "node:fs";
 import { readdir } from "node:fs/promises";
 import { resolve } from "node:path";
 
-import { IFolderResult, IScanOptions } from "./types";
+import { FolderResult, ScanOptions } from "./types";
 import { isDir } from "./util";
 
-const DEFAULT_OPTIONS: IScanOptions = {
+const DEFAULT_OPTIONS: ScanOptions = {
   recursive: true,
 };
 
@@ -14,9 +14,9 @@ const DEFAULT_OPTIONS: IScanOptions = {
  */
 async function* emitFolder(
   dir: string,
-  opts?: IScanOptions,
+  opts?: ScanOptions,
   level = 0,
-): AsyncIterableIterator<IFolderResult> {
+): AsyncIterableIterator<FolderResult> {
   dir = resolve(dir);
   const { recursive, maxLevel, includeFolder, excludeFolder, includeFile, excludeFile } =
     opts ?? DEFAULT_OPTIONS;
@@ -75,14 +75,14 @@ async function* emitFolder(
 
 export async function* walk(
   dir: string,
-  opts?: IScanOptions,
-): AsyncIterableIterator<IFolderResult> {
+  opts?: ScanOptions,
+): AsyncIterableIterator<FolderResult> {
   yield* emitFolder(dir, opts);
 }
 
 export async function* walkFiles(
   inputDir: string,
-  opts?: IScanOptions,
+  opts?: ScanOptions,
 ): AsyncIterableIterator<{ path: string; file: Dirent }> {
   for await (const { dir, files } of walk(inputDir, opts)) {
     for (const file of files) {
@@ -94,7 +94,7 @@ export async function* walkFiles(
   }
 }
 
-export async function countFiles(dir: string, opts?: IScanOptions): Promise<number> {
+export async function countFiles(dir: string, opts?: ScanOptions): Promise<number> {
   let count = 0;
   for await (const { files } of walk(dir, opts)) {
     count += files.length;

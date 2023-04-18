@@ -1,6 +1,6 @@
 import type { Dirent } from "node:fs";
 
-export interface IScanOptions {
+export interface ScanOptions {
   recursive?: boolean;
   maxLevel?: number;
   includeFolder?: (folder: Dirent, path: string) => boolean;
@@ -9,7 +9,7 @@ export interface IScanOptions {
   excludeFile?: (file: Dirent, path: string) => boolean;
 }
 
-export interface IFolderResult {
+export interface FolderResult {
   dir: string;
   files: Dirent[];
   folders: Dirent[];
