@@ -20,8 +20,9 @@ jobs:
           - macos-latest
         node-version:
           - 14.18
-          - 16.x
-          - 18.x
+          - 16
+          - 18
+          - 20
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
