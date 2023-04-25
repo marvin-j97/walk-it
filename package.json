@@ -2,7 +2,7 @@
   "name": "walk-it",
   "version": "2.0.0",
   "license": "MIT",
-  "description": "File walk iterator",
+  "description": "Async file walk iterator",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "typings": "./dist/index.d.ts",
@@ -42,7 +42,7 @@
   },
   "homepage": "https://github.com/marvin-j97/walk-it#readme",
   "devDependencies": {
-    "@types/node": "14.18.0",
+    "@types/node": "16.18.24",
     "@typescript-eslint/eslint-plugin": "5.59.0",
     "@typescript-eslint/parser": "5.59.0",
     "cross-env": "7.0.3",
@@ -58,6 +58,6 @@
     "tsup": "6.7.0"
   },
   "engines": {
-    "node": ">=14.18.0"
+    "node": ">=16"
   }
 }
