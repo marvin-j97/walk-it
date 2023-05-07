@@ -18,6 +18,11 @@ Recursive file **walk-it**erator. Requires Node 16+, Deno or Bun.
 npm i walk-it
 yarn add walk-it
 pnpm i walk-it
+```
+
+## Install (Bun)
+
+```bash
 bun install walk-it
 ```
 
