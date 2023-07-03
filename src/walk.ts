@@ -2,22 +2,19 @@ import type { Dirent } from "node:fs";
 import { readdir } from "node:fs/promises";
 import { resolve } from "node:path";
 
-import { FolderResult, ScanOptions } from "./types";
+import { FolderResult, Options } from "./types";
 import { isDir } from "./util";
 
-const DEFAULT_OPTIONS: ScanOptions = {
+const DEFAULT_OPTIONS: Options = {
   recursive: true,
 };
 
-/**
- * Walks a folder (optionally recursively), emitting one folder at a time
- */
 async function* emitFolder(
   dir: string,
-  opts?: ScanOptions,
+  opts?: Options,
   level = 0,
 ): AsyncIterableIterator<FolderResult> {
-  dir = resolve(dir);
+  const resolvedDir = resolve(dir);
   const { recursive, maxLevel, includeFolder, excludeFolder, includeFile, excludeFile } =
     opts ?? DEFAULT_OPTIONS;
 
@@ -25,14 +22,14 @@ async function* emitFolder(
     throw new Error(`Invalid maxLevel: ${maxLevel}`);
   }
 
-  const dirents = await readdir(dir, { withFileTypes: true });
+  const dirents = await readdir(resolvedDir, { withFileTypes: true });
 
   const files = dirents.filter((dirent) => {
     if (isDir(dirent)) {
       return false;
     }
 
-    const path = resolve(dir, dirent.name);
+    const path = resolve(resolvedDir, dirent.name);
 
     if (includeFile && !includeFile(dirent, path)) {
       return false;
@@ -46,7 +43,7 @@ async function* emitFolder(
   const folders = dirents.filter(isDir);
 
   yield {
-    dir,
+    dir: resolvedDir,
     files,
     folders,
     level,
@@ -54,7 +51,7 @@ async function* emitFolder(
 
   if (recursive ?? true) {
     for (const dirent of folders) {
-      const path = resolve(dir, dirent.name);
+      const path = resolve(resolvedDir, dirent.name);
 
       if (includeFolder && !includeFolder(dirent, path)) {
         continue;
@@ -73,25 +70,49 @@ async function* emitFolder(
   }
 }
 
-export async function* walk(dir: string, opts?: ScanOptions): AsyncIterableIterator<FolderResult> {
+/**
+ * Walks a folder (optionally recursively), emitting one folder at a time
+ *
+ * @param {string} dir Directory to walk
+ * @param {Options} opts Walk options
+ *
+ * @returns Async iterator
+ */
+export async function* walk(dir: string, opts?: Options): AsyncIterableIterator<FolderResult> {
   yield* emitFolder(dir, opts);
 }
 
+/**
+ * Walks a folder (optionally recursively), emitting one file at a time
+ *
+ * @param {string} dir Directory to walk
+ * @param {Options} opts Walk options
+ *
+ * @returns Async iterator
+ */
 export async function* walkFiles(
-  inputDir: string,
-  opts?: ScanOptions,
+  dir: string,
+  opts?: Options,
 ): AsyncIterableIterator<{ path: string; file: Dirent }> {
-  for await (const { dir, files } of walk(inputDir, opts)) {
+  for await (const { dir: folderDir, files } of walk(dir, opts)) {
     for (const file of files) {
       yield {
-        path: resolve(dir, file.name),
+        path: resolve(folderDir, file.name),
         file,
       };
     }
   }
 }
 
-export async function countFiles(dir: string, opts?: ScanOptions): Promise<number> {
+/**
+ * Returns the file count of a folder
+ *
+ * @param {string} dir Directory to walk
+ * @param {Options} opts Walk options
+ *
+ * @returns {number} File count
+ */
+export async function countFiles(dir: string, opts?: Options): Promise<number> {
   let count = 0;
   for await (const { files } of walk(dir, opts)) {
     count += files.length;
