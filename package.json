@@ -42,7 +42,7 @@
   },
   "homepage": "https://github.com/marvin-j97/walk-it#readme",
   "devDependencies": {
-    "@types/node": "16.18.38",
+    "@types/node": "16.18.59",
     "@vitest/coverage-istanbul": "0.33.0",
     "@vitest/ui": "0.33.0",
     "rome": "12.1.3",
