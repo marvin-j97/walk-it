@@ -3,7 +3,6 @@ import { readdir } from "node:fs/promises";
 import { resolve } from "node:path";
 
 import { FolderResult, Options } from "./types";
-import { isDir } from "./util";
 
 const DEFAULT_OPTIONS: Options = {
   recursive: true,
@@ -25,7 +24,7 @@ async function* emitFolder(
   const dirents = await readdir(resolvedDir, { withFileTypes: true });
 
   const files = dirents.filter((dirent) => {
-    if (isDir(dirent)) {
+    if (dirent.isDirectory()) {
       return false;
     }
 
@@ -40,7 +39,7 @@ async function* emitFolder(
     return true;
   });
 
-  const folders = dirents.filter(isDir);
+  const folders = dirents.filter((dirent) => dirent.isDirectory());
 
   yield {
     dir: resolvedDir,
