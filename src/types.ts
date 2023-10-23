@@ -23,9 +23,10 @@ export interface Options {
   maxLevel?: number;
 
   /**
-   * Callback to filter folders
+   * Filter function for folders. Return `true` to include a folder, `false` to exclude.
    *
-   * Return `true` to include a folder, `false` to exclude
+   * @param folder Directory entry
+   * @param path Absolute path of folder
    *
    * ### Example
    *
@@ -40,9 +41,10 @@ export interface Options {
   filterFolder?: (folder: Dirent, path: string) => boolean;
 
   /**
-   * Callback to filter files
+   * Filter function for files. Return `true` to include a file, `false` to exclude.
    *
-   * Return `true` to include a file, `false` to exclude
+   * @param folder Directory entry
+   * @param path Absolute path of file
    *
    * ### Example
    *
