@@ -45,6 +45,9 @@ export interface Options {
   excludeFile?: (file: Dirent, path: string) => boolean;
 }
 
+/**
+ * Information about visited folder
+ */
 export interface FolderResult {
   /**
    * Absolute path of folder

@@ -2,11 +2,29 @@ import type { Dirent } from "node:fs";
 import { readdir } from "node:fs/promises";
 import { resolve } from "node:path";
 
-import { FolderResult, Options } from "./types";
+import type { FolderResult, Options } from "./types";
 
 const DEFAULT_OPTIONS: Options = {
   recursive: true,
 };
+
+function filterFiles(baseDir: string, dirent: Dirent, opts: Options): boolean {
+  if (dirent.isDirectory()) {
+    return false;
+  }
+
+  const { includeFile, excludeFile } = opts;
+
+  const path = resolve(baseDir, dirent.name);
+
+  if (includeFile && !includeFile(dirent, path)) {
+    return false;
+  }
+  if (excludeFile?.(dirent, path)) {
+    return false;
+  }
+  return true;
+}
 
 async function* emitFolder(
   dir: string,
@@ -14,8 +32,8 @@ async function* emitFolder(
   level = 0,
 ): AsyncIterableIterator<FolderResult> {
   const resolvedDir = resolve(dir);
-  const { recursive, maxLevel, includeFolder, excludeFolder, includeFile, excludeFile } =
-    opts ?? DEFAULT_OPTIONS;
+  const resolvedOptions = opts ?? DEFAULT_OPTIONS;
+  const { recursive, maxLevel, includeFolder, excludeFolder } = resolvedOptions;
 
   if (maxLevel && maxLevel < 0) {
     throw new Error(`Invalid maxLevel: ${maxLevel}`);
@@ -23,22 +41,7 @@ async function* emitFolder(
 
   const dirents = await readdir(resolvedDir, { withFileTypes: true });
 
-  const files = dirents.filter((dirent) => {
-    if (dirent.isDirectory()) {
-      return false;
-    }
-
-    const path = resolve(resolvedDir, dirent.name);
-
-    if (includeFile && !includeFile(dirent, path)) {
-      return false;
-    }
-    if (excludeFile?.(dirent, path)) {
-      return false;
-    }
-    return true;
-  });
-
+  const files = dirents.filter((dirent) => filterFiles(resolvedDir, dirent, resolvedOptions));
   const folders = dirents.filter((dirent) => dirent.isDirectory());
 
   yield {
