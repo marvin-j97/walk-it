@@ -18,9 +18,9 @@
     }
   },
   "scripts": {
-    "lint": "rome check src",
-    "lint:fix": "rome check --apply-unsafe src",
-    "fmt": "rome format src --write",
+    "lint": "biome check src",
+    "lint:fix": "biome check --apply-unsafe src",
+    "fmt": "biome format src --write",
     "test": "vitest run",
     "test:ui": "vitest --ui",
     "coverage": "vitest run --coverage",

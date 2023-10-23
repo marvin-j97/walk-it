@@ -32,10 +32,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
-      - run: pnpm i
-      - run: pnpm run lint
+      - run: pnpm i --frozen-lockfile
+      - run: pnpm lint
       - run: pnpm tsc
-      - run: pnpm run coverage
+      - run: pnpm coverage
       - uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
