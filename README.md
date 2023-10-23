@@ -99,7 +99,7 @@ for await (const x of walk(dir, { recursive: false })) {
 import { walk } from "walk-it";
 
 for await (const x of walk(".", {
-  includeFile: ({ name }) => name.endsWith(".jpg"),
+  filterFile: ({ name }) => name.endsWith(".jpg"),
 })) {
   console.log(x);
 }
@@ -111,7 +111,7 @@ for await (const x of walk(".", {
 import { walk } from "walk-it";
 
 for await (const x of walk(".", {
-  excludeFolder: ({ name }) => ["node_modules", ".git"].includes(name),
+  filterFolder: ({ name }) => !["node_modules", ".git"].includes(name),
 })) {
   console.log(x);
 }
@@ -125,5 +125,11 @@ _excludeFolder_ should be preferred over filtering after walking because it will
 import { countFiles } from "walk-it";
 
 const count = await countFiles(".");
+console.log(`${count} files found`);
+
+const count = await countFiles(".", {
+  // You can also use the same options as walk and walkFiles
+  filterFolder: ({ name }) => !["node_modules", ".git"].includes(name),
+});
 console.log(`${count} files found`);
 ```

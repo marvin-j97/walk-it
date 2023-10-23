@@ -23,7 +23,7 @@ describe("include files", async () => {
     },
     {
       // Include .rs files only
-      includeFile: ({ name }) => name.endsWith(".rs"),
+      filterFile: ({ name }) => name.endsWith(".rs"),
     },
   );
 });

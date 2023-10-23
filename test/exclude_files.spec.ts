@@ -23,7 +23,7 @@ describe("exclude files", async () => {
     },
     {
       // Exclude .rs files
-      excludeFile: ({ name }) => name.endsWith(".rs"),
+      filterFile: ({ name }) => !name.endsWith(".rs"),
     },
   );
 });

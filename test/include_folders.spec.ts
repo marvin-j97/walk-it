@@ -23,7 +23,7 @@ describe("include folders", async () => {
     },
     {
       // Include folder called "nested" or "deep"
-      includeFolder: ({ name }) => name === "nested" || name === "deep",
+      filterFolder: ({ name }) => ["nested", "deep"].includes(name),
     },
   );
 });

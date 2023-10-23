@@ -23,26 +23,38 @@ export interface Options {
   maxLevel?: number;
 
   /**
-   * Callback to whitelist folders
-   */
-  includeFolder?: (folder: Dirent, path: string) => boolean;
-
-  /**
-   * Callback to blacklist folders
+   * Callback to filter folders
    *
-   * excludeFolder should be preferred over filtering after walking because it will stop the recursive descent, thus increasing performance
+   * Return `true` to include a folder, `false` to exclude
+   *
+   * ### Example
+   *
+   * Exclude node_modules:
+   *
+   * ```ts
+   * {
+   *   filterFolder: ({ name }) => name !== "node_modules",
+   * }
+   * ```
    */
-  excludeFolder?: (folder: Dirent, path: string) => boolean;
+  filterFolder?: (folder: Dirent, path: string) => boolean;
 
   /**
-   * Callback to whitelist files
+   * Callback to filter files
+   *
+   * Return `true` to include a file, `false` to exclude
+   *
+   * ### Example
+   *
+   * Only get `.rs` files:
+   *
+   * ```ts
+   * {
+   *   filterFile: ({ name }) => name.endsWith(".rs"),
+   * }
+   * ```
    */
-  includeFile?: (file: Dirent, path: string) => boolean;
-
-  /**
-   * Callback to blacklist files
-   */
-  excludeFile?: (file: Dirent, path: string) => boolean;
+  filterFile?: (file: Dirent, path: string) => boolean;
 }
 
 /**

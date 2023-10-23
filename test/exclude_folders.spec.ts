@@ -23,7 +23,7 @@ describe("exclude folders", async () => {
     },
     {
       // Exclude folder called "nested"
-      excludeFolder: ({ name }) => name === "nested",
+      filterFolder: ({ name }) => name !== "nested",
     },
   );
 });

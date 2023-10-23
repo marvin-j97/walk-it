@@ -8,22 +8,14 @@ const DEFAULT_OPTIONS: Options = {
   recursive: true,
 };
 
-function filterFiles(baseDir: string, dirent: Dirent, opts: Options): boolean {
+function filterFiles(baseDir: string, dirent: Dirent, { filterFile }: Options): boolean {
   if (dirent.isDirectory()) {
     return false;
   }
 
-  const { includeFile, excludeFile } = opts;
-
   const path = resolve(baseDir, dirent.name);
 
-  if (includeFile && !includeFile(dirent, path)) {
-    return false;
-  }
-  if (excludeFile?.(dirent, path)) {
-    return false;
-  }
-  return true;
+  return !(filterFile && !filterFile(dirent, path));
 }
 
 async function* emitFolder(
@@ -33,7 +25,7 @@ async function* emitFolder(
 ): AsyncIterableIterator<FolderResult> {
   const resolvedDir = resolve(dir);
   const resolvedOptions = opts ?? DEFAULT_OPTIONS;
-  const { recursive, maxLevel, includeFolder, excludeFolder } = resolvedOptions;
+  const { recursive, maxLevel, filterFolder } = resolvedOptions;
 
   if (maxLevel && maxLevel < 0) {
     throw new Error(`Invalid maxLevel: ${maxLevel}`);
@@ -55,10 +47,7 @@ async function* emitFolder(
     for (const dirent of folders) {
       const path = resolve(resolvedDir, dirent.name);
 
-      if (includeFolder && !includeFolder(dirent, path)) {
-        continue;
-      }
-      if (excludeFolder?.(dirent, path)) {
+      if (filterFolder && !filterFolder(dirent, path)) {
         continue;
       }
 
