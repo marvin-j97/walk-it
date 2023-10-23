@@ -28,15 +28,9 @@ export interface Options {
    * @param folder Directory entry
    * @param path Absolute path of folder
    *
-   * ### Example
+   * @example Exclude node_modules
    *
-   * Exclude node_modules:
-   *
-   * ```ts
-   * {
-   *   filterFolder: ({ name }) => name !== "node_modules",
-   * }
-   * ```
+   * { filterFolder: ({ name }) => name !== "node_modules" }
    */
   filterFolder?: (folder: Dirent, path: string) => boolean;
 
@@ -46,15 +40,9 @@ export interface Options {
    * @param folder Directory entry
    * @param path Absolute path of file
    *
-   * ### Example
+   * @example Only get `.rs` files:
    *
-   * Only get `.rs` files:
-   *
-   * ```ts
-   * {
-   *   filterFile: ({ name }) => name.endsWith(".rs"),
-   * }
-   * ```
+   * { filterFile: ({ name }) => name.endsWith(".rs") }
    */
   filterFile?: (file: Dirent, path: string) => boolean;
 }
