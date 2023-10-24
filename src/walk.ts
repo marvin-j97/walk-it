@@ -8,14 +8,14 @@ const DEFAULT_OPTIONS: Options = {
   recursive: true,
 };
 
-function filterFiles(baseDir: string, dirent: Dirent, { filterFile }: Options): boolean {
+function filterFiles(baseDir: string, dirent: Dirent, { filterFile }: Options, level: number): boolean {
   if (dirent.isDirectory()) {
     return false;
   }
 
   const path = resolve(baseDir, dirent.name);
 
-  return !(filterFile && !filterFile(dirent, path));
+  return !(filterFile && !filterFile(dirent, path, level));
 }
 
 async function* emitFolder(
@@ -33,7 +33,7 @@ async function* emitFolder(
 
   const dirents = await readdir(resolvedDir, { withFileTypes: true });
 
-  const files = dirents.filter((dirent) => filterFiles(resolvedDir, dirent, resolvedOptions));
+  const files = dirents.filter((dirent) => filterFiles(resolvedDir, dirent, resolvedOptions, level));
   const folders = dirents.filter((dirent) => dirent.isDirectory());
 
   yield {
@@ -47,7 +47,7 @@ async function* emitFolder(
     for (const dirent of folders) {
       const path = resolve(resolvedDir, dirent.name);
 
-      if (filterFolder && !filterFolder(dirent, path)) {
+      if (filterFolder && !filterFolder(dirent, path, level)) {
         continue;
       }
 

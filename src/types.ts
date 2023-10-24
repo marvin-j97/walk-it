@@ -27,24 +27,26 @@ export interface Options {
    *
    * @param folder Directory entry
    * @param path Absolute path of folder
+   * @param level Folder depth, relative to the starting folder - use maxLevel if you want to limit the folder descent
    *
    * @example Exclude node_modules
    *
    * { filterFolder: ({ name }) => name !== "node_modules" }
    */
-  filterFolder?: (folder: Dirent, path: string) => boolean;
+  filterFolder?: (folder: Dirent, path: string, level: number) => boolean;
 
   /**
    * Filter function for files. Return `true` to include a file, `false` to exclude.
    *
    * @param folder Directory entry
    * @param path Absolute path of file
+   * @param level Folder depth, relative to the starting folder
    *
    * @example Only get `.rs` files:
    *
    * { filterFile: ({ name }) => name.endsWith(".rs") }
    */
-  filterFile?: (file: Dirent, path: string) => boolean;
+  filterFile?: (file: Dirent, path: string, level: number) => boolean;
 }
 
 /**
