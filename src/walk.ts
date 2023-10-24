@@ -8,7 +8,12 @@ const DEFAULT_OPTIONS: Options = {
   recursive: true,
 };
 
-function filterFiles(baseDir: string, dirent: Dirent, { filterFile }: Options, level: number): boolean {
+function filterFiles(
+  baseDir: string,
+  dirent: Dirent,
+  { filterFile }: Options,
+  level: number,
+): boolean {
   if (dirent.isDirectory()) {
     return false;
   }
@@ -33,7 +38,9 @@ async function* emitFolder(
 
   const dirents = await readdir(resolvedDir, { withFileTypes: true });
 
-  const files = dirents.filter((dirent) => filterFiles(resolvedDir, dirent, resolvedOptions, level));
+  const files = dirents.filter((dirent) =>
+    filterFiles(resolvedDir, dirent, resolvedOptions, level),
+  );
   const folders = dirents.filter((dirent) => dirent.isDirectory());
 
   yield {
