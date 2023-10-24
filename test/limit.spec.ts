@@ -1,6 +1,7 @@
 import { describe } from "vitest";
 
 import { testWalk } from "./util";
+import { createWalker } from "../src/builder";
 
 describe("limited depth", () => {
   testWalk(
@@ -18,6 +19,7 @@ describe("limited depth", () => {
     ],
     {
       count: 9,
+      walker: createWalker().limit(1),
     },
     {
       maxLevel: 1,

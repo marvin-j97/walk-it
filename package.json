@@ -3,9 +3,9 @@
   "version": "4.1.0",
   "license": "MIT",
   "description": "Async file walk iterator",
-  "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "typings": "./dist/index.d.ts",
+  "type": "module",
   "sideEffects": false,
   "files": [
     "dist"
@@ -13,8 +13,11 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.js",
       "import": "./dist/index.mjs"
+    },
+    "./builder": {
+      "types": "./dist/builder.d.ts",
+      "import": "./dist/builder.mjs"
     }
   },
   "scripts": {
@@ -24,7 +27,7 @@
     "test": "vitest run",
     "test:ui": "vitest --ui",
     "coverage": "vitest run --coverage",
-    "build": "tsup src/index.ts --format cjs,esm --dts --clean"
+    "build": "tsup"
   },
   "repository": {
     "type": "git",

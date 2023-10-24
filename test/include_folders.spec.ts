@@ -1,6 +1,11 @@
 import { describe } from "vitest";
 
 import { testWalk } from "./util";
+import { createWalker } from "../src/builder";
+import { FilterFn } from "../src";
+
+// Include folder called "nested" or "deep"
+const filterFolder: FilterFn = ({ name }) => ["nested", "deep"].includes(name);
 
 describe("include folders", async () => {
   testWalk(
@@ -20,10 +25,10 @@ describe("include folders", async () => {
     ],
     {
       count: 10,
+      walker: createWalker().addFolderFilter(filterFolder),
     },
     {
-      // Include folder called "nested" or "deep"
-      filterFolder: ({ name }) => ["nested", "deep"].includes(name),
+      filterFolder,
     },
   );
 });

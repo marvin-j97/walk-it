@@ -1,6 +1,7 @@
 import { describe } from "vitest";
 
 import { testWalk } from "./util";
+import { createWalker } from "../src/builder";
 
 describe("default options", () => {
   testWalk(
@@ -18,6 +19,7 @@ describe("default options", () => {
     ],
     {
       count: 10,
+      walker: createWalker(),
     },
   );
 });

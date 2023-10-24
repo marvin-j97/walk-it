@@ -1,6 +1,11 @@
 import { describe } from "vitest";
 
 import { testWalk } from "./util";
+import { createWalker } from "../src/builder";
+import { FilterFn } from "../src";
+
+// Exclude folder called "nested"
+const filterFolder: FilterFn = ({ name }) => name !== "nested";
 
 describe("exclude folders", async () => {
   testWalk(
@@ -20,10 +25,10 @@ describe("exclude folders", async () => {
     ],
     {
       count: 6,
+      walker: createWalker().addFolderFilter(filterFolder),
     },
     {
-      // Exclude folder called "nested"
-      filterFolder: ({ name }) => name !== "nested",
+      filterFolder,
     },
   );
 });

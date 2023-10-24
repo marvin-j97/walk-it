@@ -1,6 +1,11 @@
 import { describe } from "vitest";
 
 import { testWalk } from "./util";
+import { FilterFn } from "../src";
+import { createWalker } from "../src/builder";
+
+// Include all files in subfolders of level 2 (sub-sub-folders)
+const filterFile: FilterFn = (_dirent, _path, level) => level === 2;
 
 describe("get files where level = 2", async () => {
   testWalk(
@@ -20,10 +25,10 @@ describe("get files where level = 2", async () => {
     ],
     {
       count: 2,
+      walker: createWalker().addFileFilter(filterFile),
     },
     {
-      // Include all files in subfolders of level 2 (sub-sub-folders)
-      filterFile: (_dirent, _path, level) => level === 2,
+      filterFile,
     },
   );
 });

@@ -1,6 +1,7 @@
 import { describe } from "vitest";
 
 import { testWalk } from "./util";
+import { createWalker } from "../src/builder";
 
 describe("non_recursive", () => {
   testWalk(
@@ -18,6 +19,7 @@ describe("non_recursive", () => {
     ],
     {
       count: 5,
+      walker: createWalker().flat(),
     },
     {
       recursive: false,

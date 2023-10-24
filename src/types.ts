@@ -1,5 +1,7 @@
 import type { Dirent } from "node:fs";
 
+export type FilterFn = (dirent: Dirent, path: string, level: number) => boolean;
+
 /**
  * Walk options
  */
@@ -33,7 +35,7 @@ export interface Options {
    *
    * { filterFolder: ({ name }) => name !== "node_modules" }
    */
-  filterFolder?: (folder: Dirent, path: string, level: number) => boolean;
+  filterFolder?: FilterFn;
 
   /**
    * Filter function for files. Return `true` to include a file, `false` to exclude.
@@ -46,7 +48,7 @@ export interface Options {
    *
    * { filterFile: ({ name }) => name.endsWith(".rs") }
    */
-  filterFile?: (file: Dirent, path: string, level: number) => boolean;
+  filterFile?: FilterFn;
 }
 
 /**

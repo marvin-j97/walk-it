@@ -3,6 +3,8 @@ import { mkdirSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 
 import { afterAll, beforeAll, expect, it } from "vitest";
+
+import type { Builder } from "../src/builder";
 import { type Options, countFiles, walkFiles } from "../src";
 
 export function setupFixture(files: string[]): { folder: string; files: string[] } {
@@ -33,21 +35,37 @@ export function setupFixture(files: string[]): { folder: string; files: string[]
   return { folder, files: createdFiles };
 }
 
-type Expected = {
+type TestOptions = {
   count: number;
+  walker?: Builder;
 };
 
-export function testWalk(inputFiles: string[], expected: Expected, opts?: Options) {
+export function testWalk(
+  inputFiles: string[],
+  { walker, ...expected }: TestOptions,
+  opts?: Options,
+) {
   const { folder, files } = setupFixture(inputFiles);
 
   it("should have correct file count", async () => {
     const count = await countFiles(folder, opts);
     expect(count).to.equal(expected.count);
+
+    if (walker) {
+      const walkerCount = await walker?.path(folder).count();
+      expect(walkerCount).to.equal(expected.count);
+    }
   });
 
   it("should only find fixture files", async () => {
     for await (const { path } of walkFiles(folder, opts)) {
       expect(files).to.include(path);
+    }
+
+    if (walker) {
+      for await (const { path } of walker.files()) {
+        expect(files).to.include(path);
+      }
     }
   });
 }
