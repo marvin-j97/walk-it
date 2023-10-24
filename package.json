@@ -1,6 +1,6 @@
 {
   "name": "walk-it",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "license": "MIT",
   "description": "Async file walk iterator",
   "main": "./dist/index.js",
