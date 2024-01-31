@@ -36,7 +36,7 @@ jobs:
       - run: pnpm lint
       - run: pnpm tsc
       - run: pnpm coverage
-      - uses: codecov/codecov-action@v3
+      - uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           file: ./coverage/coverage-final.json # optional
