@@ -43,12 +43,12 @@
   "homepage": "https://github.com/marvin-j97/walk-it#readme",
   "devDependencies": {
     "@types/node": "18.19.15",
-    "@vitest/coverage-istanbul": "0.34.6",
-    "@vitest/ui": "0.34.6",
+    "@vitest/coverage-istanbul": "1.2.2",
+    "@vitest/ui": "1.2.2",
     "@biomejs/biome": "1.5.3",
     "tsup": "8.0.1",
     "typescript": "5.3.3",
-    "vitest": "0.34.6"
+    "vitest": "1.2.2"
   },
   "engines": {
     "node": "18 || 20"
