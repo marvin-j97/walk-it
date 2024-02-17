@@ -42,7 +42,7 @@
   },
   "homepage": "https://github.com/marvin-j97/walk-it#readme",
   "devDependencies": {
-    "@types/node": "18.19.15",
+    "@types/node": "18.19.17",
     "@vitest/coverage-istanbul": "1.2.2",
     "@vitest/ui": "1.2.2",
     "@biomejs/biome": "1.5.3",
