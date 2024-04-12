@@ -1,0 +1,16 @@
+{
+  "name": "@svarta/walk-it",
+  "version": "4.2.0",
+  "exports": {
+    ".": "./mod.ts"
+  },
+  "publish": {
+    "include": [
+      "src",
+      "deno.json",
+      "mod.ts",
+      "LICENSE",
+      "README.md"
+    ]
+  }
+}
