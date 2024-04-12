@@ -5,7 +5,7 @@
   "description": "Async file walk iterator",
   "type": "module",
   "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "module": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "sideEffects": false,
   "files": [
@@ -14,8 +14,7 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.js"
     }
   },
   "scripts": {
@@ -26,7 +25,7 @@
     "test": "vitest run",
     "test:watch": "vitest watch",
     "coverage": "vitest run --coverage",
-    "build": "tsup src/index.ts --format cjs,esm --dts --clean"
+    "build": "tsup src/index.ts --format esm --dts --clean"
   },
   "repository": {
     "type": "git",
