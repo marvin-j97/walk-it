@@ -33,6 +33,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
       - run: pnpm i --frozen-lockfile
+      - run: pnpm fmt:check
       - run: pnpm lint
       - run: pnpm tsc
       - run: pnpm coverage
