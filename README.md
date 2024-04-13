@@ -6,7 +6,7 @@
 [![Bun ready](https://img.shields.io/static/v1?label=&message=Bun+ready&color=%23000000&logo=bun)]()
 [![Node.js CI](https://github.com/marvin-j97/walk-it/actions/workflows/node.js.yml/badge.svg)](https://github.com/marvin-j97/walk-it/actions/workflows/node.js.yml)
 [![npm](https://img.shields.io/npm/v/walk-it)](https://www.npmjs.com/package/walk-it)
-[![jsr](https://img.shields.io/jsr/v/svarta/walk-it)](https://jsr.io/@svarta/walk-it)
+[![jsr](https://img.shields.io/jsr/v/@svarta/walk-it)](https://jsr.io/@svarta/walk-it)
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/walk-it)](https://bundlephobia.com/package/walk-it)
 [![codecov](https://codecov.io/gh/marvin-j97/walk-it/branch/main/graph/badge.svg?token=ExVQZnlhqk)](https://codecov.io/gh/marvin-j97/walk-it)
 ![GitHub](https://img.shields.io/github/license/marvin-j97/walk-it)
