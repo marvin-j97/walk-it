@@ -4,7 +4,7 @@
 [![ESM ready](https://img.shields.io/static/v1?label=&message=ESM+ready&color=%23000000&logo=javascript)]()
 [![Deno ready](https://img.shields.io/static/v1?label=&message=Deno+ready&color=%23000000&logo=deno)]()
 [![Bun ready](https://img.shields.io/static/v1?label=&message=Bun+ready&color=%23000000&logo=bun)]()
-[![Node.js CI](https://github.com/marvin-j97/walk-it/actions/workflows/node.js.yml/badge.svg)](https://github.com/marvin-j97/walk-it/actions/workflows/node.js.yml)
+[![Node.js CI](https://github.com/marvin-j97/walk-it/actions/workflows/node.yml/badge.svg)](https://github.com/marvin-j97/walk-it/actions/workflows/node.yml)
 [![npm](https://img.shields.io/npm/v/walk-it)](https://www.npmjs.com/package/walk-it)
 [![jsr](https://img.shields.io/jsr/v/@svarta/walk-it)](https://jsr.io/@svarta/walk-it)
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/walk-it)](https://bundlephobia.com/package/walk-it)
