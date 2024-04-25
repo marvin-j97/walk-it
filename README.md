@@ -17,20 +17,18 @@ Recursive file **walk-it**erator. Requires Node 18+, Deno or Bun.
 
 ```bash
 npm i walk-it
-yarn add walk-it
 pnpm i walk-it
+yarn add walk-it
+bun install walk-it
 ```
 
 ## Install (JSR)
 
 ```bash
-npm install @jsr/svarta__walk-it
-```
-
-## Install (Bun)
-
-```bash
-bun install walk-it
+npx jsr add @svarta/walk-it
+pnpm jsr add @svarta/walk-it
+yarn jsr add @svarta/walk-it
+bunx jsr add @svarta/walk-it
 ```
 
 ## Deno usage
