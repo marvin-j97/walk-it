@@ -18,8 +18,9 @@
     }
   },
   "scripts": {
-    "lint": "biome check src",
-    "lint:fix": "biome check --apply-unsafe src",
+    "biome:check": "biome check src",
+    "lint": "biome lint src",
+    "lint:fix": "biome lint --apply src",
     "fmt": "biome format src --write",
     "fmt:check": "biome format src",
     "test": "vitest run",
