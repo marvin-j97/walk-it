@@ -12,11 +12,11 @@ importers:
         specifier: 1.7.1
         version: 1.7.1
       '@types/node':
-        specifier: 22.8.4
-        version: 22.8.4
+        specifier: 18.19.61
+        version: 18.19.61
       '@vitest/coverage-istanbul':
         specifier: 1.5.2
-        version: 1.5.2(vitest@1.5.2(@types/node@22.8.4))
+        version: 1.5.2(vitest@1.5.2(@types/node@18.19.61))
       tsup:
         specifier: 8.0.2
         version: 8.0.2(postcss@8.4.38)(typescript@5.4.5)
@@ -25,10 +25,10 @@ importers:
         version: 5.4.5
       vite:
         specifier: 5.2.10
-        version: 5.2.10(@types/node@22.8.4)
+        version: 5.2.10(@types/node@18.19.61)
       vitest:
         specifier: 1.5.2
-        version: 1.5.2(@types/node@22.8.4)
+        version: 1.5.2(@types/node@18.19.61)
 
 packages:
 
@@ -630,8 +630,8 @@ packages:
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
 
-  '@types/node@22.8.4':
-    resolution: {integrity: sha512-SpNNxkftTJOPk0oN+y2bIqurEXHTA2AOZ3EJDDKeJ5VzkvvORSvmQXGQarcOzWV1ac7DCaPBEdMDxBsM+d8jWw==}
+  '@types/node@18.19.61':
+    resolution: {integrity: sha512-z8fH66NcVkDzBItOao+Nyh0fiy7CYdxIyxnNCcZ60aY0I+EA/y4TSi/S/W9i8DIQvwVo7a0pgzAxmDeNnqrpkw==}
 
   '@vitest/coverage-istanbul@1.5.2':
     resolution: {integrity: sha512-YGC+QSWOL8cQ2HQaTEFttmG9v3DGLy7lMZIGdqjtTgaW6omW17/uZPxuh6m2t69T0rFLqImduVthm5o/gYYWTQ==}
@@ -1297,8 +1297,8 @@ packages:
   ufo@1.5.3:
     resolution: {integrity: sha512-Y7HYmWaFwPUmkoQCUIAYpKqkOf+SbVj/2fJJZ4RJMCfZp0rTGwRbzQD+HghfnhKOjL9E01okqz+ncJskGYfBNw==}
 
-  undici-types@6.19.8:
-    resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
+  undici-types@5.26.5:
+    resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
 
   update-browserslist-db@1.0.13:
     resolution: {integrity: sha512-xebP81SNcPuNpPP3uzeW1NYXxI3rxyJzF3pD6sH4jE7o/IX+WtSpwnVU+qIsDPyk0d3hmFQ7mjqc6AtV604hbg==}
@@ -1823,11 +1823,11 @@ snapshots:
 
   '@types/estree@1.0.5': {}
 
-  '@types/node@22.8.4':
+  '@types/node@18.19.61':
     dependencies:
-      undici-types: 6.19.8
+      undici-types: 5.26.5
 
-  '@vitest/coverage-istanbul@1.5.2(vitest@1.5.2(@types/node@22.8.4))':
+  '@vitest/coverage-istanbul@1.5.2(vitest@1.5.2(@types/node@18.19.61))':
     dependencies:
       debug: 4.3.4
       istanbul-lib-coverage: 3.2.2
@@ -1838,7 +1838,7 @@ snapshots:
       magicast: 0.3.4
       picocolors: 1.0.0
       test-exclude: 6.0.0
-      vitest: 1.5.2(@types/node@22.8.4)
+      vitest: 1.5.2(@types/node@18.19.61)
     transitivePeerDependencies:
       - supports-color
 
@@ -2532,7 +2532,7 @@ snapshots:
 
   ufo@1.5.3: {}
 
-  undici-types@6.19.8: {}
+  undici-types@5.26.5: {}
 
   update-browserslist-db@1.0.13(browserslist@4.23.0):
     dependencies:
@@ -2540,13 +2540,13 @@ snapshots:
       escalade: 3.1.2
       picocolors: 1.0.0
 
-  vite-node@1.5.2(@types/node@22.8.4):
+  vite-node@1.5.2(@types/node@18.19.61):
     dependencies:
       cac: 6.7.14
       debug: 4.3.4
       pathe: 1.1.2
       picocolors: 1.0.0
-      vite: 5.2.10(@types/node@22.8.4)
+      vite: 5.2.10(@types/node@18.19.61)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -2557,16 +2557,16 @@ snapshots:
       - supports-color
       - terser
 
-  vite@5.2.10(@types/node@22.8.4):
+  vite@5.2.10(@types/node@18.19.61):
     dependencies:
       esbuild: 0.20.2
       postcss: 8.4.38
       rollup: 4.16.4
     optionalDependencies:
-      '@types/node': 22.8.4
+      '@types/node': 18.19.61
       fsevents: 2.3.3
 
-  vitest@1.5.2(@types/node@22.8.4):
+  vitest@1.5.2(@types/node@18.19.61):
     dependencies:
       '@vitest/expect': 1.5.2
       '@vitest/runner': 1.5.2
@@ -2585,11 +2585,11 @@ snapshots:
       strip-literal: 2.1.0
       tinybench: 2.8.0
       tinypool: 0.8.4
-      vite: 5.2.10(@types/node@22.8.4)
-      vite-node: 1.5.2(@types/node@22.8.4)
+      vite: 5.2.10(@types/node@18.19.61)
+      vite-node: 1.5.2(@types/node@18.19.61)
       why-is-node-running: 2.2.2
     optionalDependencies:
-      '@types/node': 22.8.4
+      '@types/node': 18.19.61
     transitivePeerDependencies:
       - less
       - lightningcss
