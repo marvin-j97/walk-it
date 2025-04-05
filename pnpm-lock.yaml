@@ -19,10 +19,10 @@ importers:
         version: 2.1.4(vitest@2.1.4(@types/node@18.19.61))
       tsup:
         specifier: 8.3.5
-        version: 8.3.5(postcss@8.4.47)(typescript@5.4.5)(yaml@2.6.0)
+        version: 8.3.5(postcss@8.4.47)(typescript@5.8.3)(yaml@2.6.0)
       typescript:
-        specifier: 5.4.5
-        version: 5.4.5
+        specifier: 5.8.3
+        version: 5.8.3
       vite:
         specifier: 5.4.10
         version: 5.4.10(@types/node@18.19.61)
@@ -1056,8 +1056,8 @@ packages:
       typescript:
         optional: true
 
-  typescript@5.4.5:
-    resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
+  typescript@5.8.3:
+    resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -2019,7 +2019,7 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  tsup@8.3.5(postcss@8.4.47)(typescript@5.4.5)(yaml@2.6.0):
+  tsup@8.3.5(postcss@8.4.47)(typescript@5.8.3)(yaml@2.6.0):
     dependencies:
       bundle-require: 5.0.0(esbuild@0.24.0)
       cac: 6.7.14
@@ -2039,14 +2039,14 @@ snapshots:
       tree-kill: 1.2.2
     optionalDependencies:
       postcss: 8.4.47
-      typescript: 5.4.5
+      typescript: 5.8.3
     transitivePeerDependencies:
       - jiti
       - supports-color
       - tsx
       - yaml
 
-  typescript@5.4.5: {}
+  typescript@5.8.3: {}
 
   undici-types@5.26.5: {}
 
