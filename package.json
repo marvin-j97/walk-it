@@ -49,7 +49,7 @@
     "@vitest/coverage-istanbul": "3.2.1",
     "tsup": "8.3.5",
     "typescript": "5.8.3",
-    "vite": "5.4.10",
+    "vite": "6.3.5",
     "vitest": "3.2.1"
   },
   "engines": {
