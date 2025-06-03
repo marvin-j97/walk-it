@@ -11,7 +11,7 @@
 [![codecov](https://codecov.io/gh/marvin-j97/walk-it/branch/main/graph/badge.svg?token=ExVQZnlhqk)](https://codecov.io/gh/marvin-j97/walk-it)
 ![GitHub](https://img.shields.io/github/license/marvin-j97/walk-it)
 
-Recursive file **walk-it**erator. Requires Node 18+, Deno or Bun.
+Recursive file **walk-it**erator. Requires Node 20+, Deno or Bun.
 
 ## Install (Node)
 
