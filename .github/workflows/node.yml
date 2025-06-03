@@ -37,7 +37,7 @@ jobs:
       - run: pnpm biome:check
       - run: pnpm tsc
       - run: pnpm coverage
-      - uses: codecov/codecov-action@v4
+      - uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           file: ./coverage/coverage-final.json # optional
