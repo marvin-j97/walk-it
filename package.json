@@ -46,11 +46,11 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@types/node": "22.15.29",
-    "@vitest/coverage-istanbul": "3.2.1",
+    "@vitest/coverage-istanbul": "3.2.4",
     "tsup": "8.5.0",
     "typescript": "5.8.3",
     "vite": "6.3.5",
-    "vitest": "3.2.1"
+    "vitest": "3.2.4"
   },
   "engines": {
     "node": "20 || 22 || 24"
