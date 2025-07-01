@@ -45,7 +45,7 @@
   "homepage": "https://github.com/marvin-j97/walk-it#readme",
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@types/node": "22.15.29",
+    "@types/node": "22.16.0",
     "@vitest/coverage-istanbul": "3.2.1",
     "tsup": "8.5.0",
     "typescript": "5.8.3",
