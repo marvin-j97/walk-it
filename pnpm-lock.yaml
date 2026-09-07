@@ -16,19 +16,19 @@ importers:
         version: 22.15.29
       '@vitest/coverage-istanbul':
         specifier: 3.2.1
-        version: 3.2.1(vitest@3.2.1(@types/node@22.15.29)(yaml@2.6.0))
+        version: 3.2.1(supports-color@7.2.0)(vitest@3.2.1(@types/node@22.15.29)(supports-color@7.2.0)(yaml@2.6.0))
       tsup:
         specifier: 8.5.0
-        version: 8.5.0(postcss@8.5.4)(typescript@5.8.3)(yaml@2.6.0)
+        version: 8.5.0(postcss@8.5.4)(supports-color@7.2.0)(typescript@5.9.3)(yaml@2.6.0)
       typescript:
-        specifier: 5.8.3
-        version: 5.8.3
+        specifier: 5.9.3
+        version: 5.9.3
       vite:
         specifier: 6.3.5
         version: 6.3.5(@types/node@22.15.29)(yaml@2.6.0)
       vitest:
         specifier: 3.2.1
-        version: 3.2.1(@types/node@22.15.29)(yaml@2.6.0)
+        version: 3.2.1(@types/node@22.15.29)(supports-color@7.2.0)(yaml@2.6.0)
 
 packages:
 
@@ -961,8 +961,8 @@ packages:
       typescript:
         optional: true
 
-  typescript@5.8.3:
-    resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==}
+  typescript@5.9.3:
+    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -1098,20 +1098,20 @@ snapshots:
 
   '@babel/compat-data@7.26.0': {}
 
-  '@babel/core@7.26.0':
+  '@babel/core@7.26.0(supports-color@7.2.0)':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@babel/code-frame': 7.26.0
       '@babel/generator': 7.26.0
       '@babel/helper-compilation-targets': 7.25.9
-      '@babel/helper-module-transforms': 7.26.0(@babel/core@7.26.0)
+      '@babel/helper-module-transforms': 7.26.0(@babel/core@7.26.0(supports-color@7.2.0))(supports-color@7.2.0)
       '@babel/helpers': 7.26.0
       '@babel/parser': 7.26.1
       '@babel/template': 7.25.9
-      '@babel/traverse': 7.25.9
+      '@babel/traverse': 7.25.9(supports-color@7.2.0)
       '@babel/types': 7.26.0
       convert-source-map: 2.0.0
-      debug: 4.4.1
+      debug: 4.4.1(supports-color@7.2.0)
       gensync: 1.0.0-beta.2
       json5: 2.2.3
       semver: 6.3.1
@@ -1134,19 +1134,19 @@ snapshots:
       lru-cache: 5.1.1
       semver: 6.3.1
 
-  '@babel/helper-module-imports@7.25.9':
+  '@babel/helper-module-imports@7.25.9(supports-color@7.2.0)':
     dependencies:
-      '@babel/traverse': 7.25.9
+      '@babel/traverse': 7.25.9(supports-color@7.2.0)
       '@babel/types': 7.26.0
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/helper-module-transforms@7.26.0(@babel/core@7.26.0)':
+  '@babel/helper-module-transforms@7.26.0(@babel/core@7.26.0(supports-color@7.2.0))(supports-color@7.2.0)':
     dependencies:
-      '@babel/core': 7.26.0
-      '@babel/helper-module-imports': 7.25.9
+      '@babel/core': 7.26.0(supports-color@7.2.0)
+      '@babel/helper-module-imports': 7.25.9(supports-color@7.2.0)
       '@babel/helper-validator-identifier': 7.25.9
-      '@babel/traverse': 7.25.9
+      '@babel/traverse': 7.25.9(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -1171,14 +1171,14 @@ snapshots:
       '@babel/parser': 7.26.1
       '@babel/types': 7.26.0
 
-  '@babel/traverse@7.25.9':
+  '@babel/traverse@7.25.9(supports-color@7.2.0)':
     dependencies:
       '@babel/code-frame': 7.26.0
       '@babel/generator': 7.26.0
       '@babel/parser': 7.26.1
       '@babel/template': 7.25.9
       '@babel/types': 7.26.0
-      debug: 4.4.1
+      debug: 4.4.1(supports-color@7.2.0)
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -1403,19 +1403,19 @@ snapshots:
     dependencies:
       undici-types: 6.21.0
 
-  '@vitest/coverage-istanbul@3.2.1(vitest@3.2.1(@types/node@22.15.29)(yaml@2.6.0))':
+  '@vitest/coverage-istanbul@3.2.1(supports-color@7.2.0)(vitest@3.2.1(@types/node@22.15.29)(supports-color@7.2.0)(yaml@2.6.0))':
     dependencies:
       '@istanbuljs/schema': 0.1.3
-      debug: 4.4.1
+      debug: 4.4.1(supports-color@7.2.0)
       istanbul-lib-coverage: 3.2.2
-      istanbul-lib-instrument: 6.0.3
+      istanbul-lib-instrument: 6.0.3(supports-color@7.2.0)
       istanbul-lib-report: 3.0.1
-      istanbul-lib-source-maps: 5.0.6
+      istanbul-lib-source-maps: 5.0.6(supports-color@7.2.0)
       istanbul-reports: 3.1.7
       magicast: 0.3.5
       test-exclude: 7.0.1
       tinyrainbow: 2.0.0
-      vitest: 3.2.1(@types/node@22.15.29)(yaml@2.6.0)
+      vitest: 3.2.1(@types/node@22.15.29)(supports-color@7.2.0)(yaml@2.6.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -1532,9 +1532,11 @@ snapshots:
       shebang-command: 2.0.0
       which: 2.0.2
 
-  debug@4.4.1:
+  debug@4.4.1(supports-color@7.2.0):
     dependencies:
       ms: 2.1.3
+    optionalDependencies:
+      supports-color: 7.2.0
 
   deep-eql@5.0.2: {}
 
@@ -1625,9 +1627,9 @@ snapshots:
 
   istanbul-lib-coverage@3.2.2: {}
 
-  istanbul-lib-instrument@6.0.3:
+  istanbul-lib-instrument@6.0.3(supports-color@7.2.0):
     dependencies:
-      '@babel/core': 7.26.0
+      '@babel/core': 7.26.0(supports-color@7.2.0)
       '@babel/parser': 7.26.1
       '@istanbuljs/schema': 0.1.3
       istanbul-lib-coverage: 3.2.2
@@ -1641,10 +1643,10 @@ snapshots:
       make-dir: 4.0.0
       supports-color: 7.2.0
 
-  istanbul-lib-source-maps@5.0.6:
+  istanbul-lib-source-maps@5.0.6(supports-color@7.2.0):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
-      debug: 4.4.1
+      debug: 4.4.1(supports-color@7.2.0)
       istanbul-lib-coverage: 3.2.2
     transitivePeerDependencies:
       - supports-color
@@ -1892,13 +1894,13 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  tsup@8.5.0(postcss@8.5.4)(typescript@5.8.3)(yaml@2.6.0):
+  tsup@8.5.0(postcss@8.5.4)(supports-color@7.2.0)(typescript@5.9.3)(yaml@2.6.0):
     dependencies:
       bundle-require: 5.1.0(esbuild@0.25.5)
       cac: 6.7.14
       chokidar: 4.0.3
       consola: 3.4.2
-      debug: 4.4.1
+      debug: 4.4.1(supports-color@7.2.0)
       esbuild: 0.25.5
       fix-dts-default-cjs-exports: 1.0.1
       joycon: 3.1.1
@@ -1913,14 +1915,14 @@ snapshots:
       tree-kill: 1.2.2
     optionalDependencies:
       postcss: 8.5.4
-      typescript: 5.8.3
+      typescript: 5.9.3
     transitivePeerDependencies:
       - jiti
       - supports-color
       - tsx
       - yaml
 
-  typescript@5.8.3: {}
+  typescript@5.9.3: {}
 
   ufo@1.6.1: {}
 
@@ -1932,10 +1934,10 @@ snapshots:
       escalade: 3.2.0
       picocolors: 1.1.1
 
-  vite-node@3.2.1(@types/node@22.15.29)(yaml@2.6.0):
+  vite-node@3.2.1(@types/node@22.15.29)(supports-color@7.2.0)(yaml@2.6.0):
     dependencies:
       cac: 6.7.14
-      debug: 4.4.1
+      debug: 4.4.1(supports-color@7.2.0)
       es-module-lexer: 1.7.0
       pathe: 2.0.3
       vite: 6.3.5(@types/node@22.15.29)(yaml@2.6.0)
@@ -1966,7 +1968,7 @@ snapshots:
       fsevents: 2.3.3
       yaml: 2.6.0
 
-  vitest@3.2.1(@types/node@22.15.29)(yaml@2.6.0):
+  vitest@3.2.1(@types/node@22.15.29)(supports-color@7.2.0)(yaml@2.6.0):
     dependencies:
       '@types/chai': 5.2.2
       '@vitest/expect': 3.2.1
@@ -1977,7 +1979,7 @@ snapshots:
       '@vitest/spy': 3.2.1
       '@vitest/utils': 3.2.1
       chai: 5.2.0
-      debug: 4.4.1
+      debug: 4.4.1(supports-color@7.2.0)
       expect-type: 1.2.1
       magic-string: 0.30.17
       pathe: 2.0.3
@@ -1989,7 +1991,7 @@ snapshots:
       tinypool: 1.1.0
       tinyrainbow: 2.0.0
       vite: 6.3.5(@types/node@22.15.29)(yaml@2.6.0)
-      vite-node: 3.2.1(@types/node@22.15.29)(yaml@2.6.0)
+      vite-node: 3.2.1(@types/node@22.15.29)(supports-color@7.2.0)(yaml@2.6.0)
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 22.15.29
